@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,34 +15,29 @@
     <div class="container py-5">
         <div class="card shadow-lg">
             <div class="card-header bg-primary text-white text-center">
-                <h2 class="mb-0">User Information</h2>
+                <h2 class="mb-0">Student Information</h2>
             </div>
 
-            <div class="card-header text-white text-right">
-                <a href="{{ route('users.create') }}">
-                    <button class="btn btn-success">Create New User</button>
-                </a>
-            </div>
+           
 
             <div class="card-body">
                 <table class="table table-hover table-bordered align-middle text-center">
                     <thead class="table-dark">
                         <tr>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Age</th>
-                            <th>City</th>
-                            <th>Action</th>
+                            <th>father_name</th>
+                            <th>age</th>
+                            <th>Degree Name</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($user as $users)
+                        @foreach ($students as $student)
                             <tr>
-                                <td>{{ $users->name }}</td>
-                                <td>{{ $users->email }}</td>
-                                <td>{{ $users->age }}</td>
-                                <td>{{ $users->city }}</td>
-                                <td class="d-flex align-items-center gap-2">
+                                <td>{{ $student->name }}</td>
+                                <td>{{ $student->father_name }}</td>
+                                <td>{{ $student->age }}</td>
+                                <td>{{ $student->degree_name }}</td>
+                                {{-- <td class="d-flex align-items-center gap-2">
                                     <a href="{{ route('get.single.user', $users->id) }}" class="btn btn-success">View
                                         User</a>
 
@@ -54,8 +49,8 @@
                                     </form>
                                     <a href="{{ route('get.single.edit', $users->id) }}" class="btn btn-success">Edit
                                         User</a>
-                                </td>
-
+                                </td> --}}
+{{-- 
                             </tr>
                         @endforeach
                     </tbody>
@@ -63,8 +58,7 @@
 
                 </table>
                 <div class="">
-                        {{-- {{ $user->links('pagination::bootstrap-5') }} --}}
-                  {{-- {{ $user->onEachSide(1)->links() }}  --}}
+                    {{ $students->links('pagination::bootstrap-5') }}
                 </div>
 
             </div>
@@ -80,4 +74,27 @@
 
 </body>
 
-</html>
+</html> --}} 
+
+
+<h1>Students Summary by Age</h1>
+
+<table border="1" cellpadding="8">
+    <thead>
+        <tr>
+            {{-- <th>Age</th> --}}
+            <th>Total Students</th>
+            <th>Degrees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($students as $student)
+            <tr>
+                {{-- <td>{{ $student->age }}</td> --}}
+                <td>{{ $student->total_students }}</td>
+                <td>{{ $student->degrees }}</td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+

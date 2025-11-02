@@ -33,23 +33,23 @@
 
                     <div class="mb-3">
                         <label class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" required value="{{ old('name') }}">
+                        <input type="text" name="name" class="form-control"  value="{{ old('name') }}">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" required value="{{ old('email') }}">
+                        <input type="email" name="email" class="form-control"  value="{{ old('email') }}">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">Age</label>
-                        <input type="number" name="age" class="form-control" min="18" max="100" required
+                        <input type="number" name="age" class="form-control"  max="100" 
                             value="{{ old('age') }}">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label">City</label>
-                        <select name="city" class="form-select" required>
+                        <select name="city" class="form-select" >
                             <option value="">Select a city</option>
                             @foreach ($city as $cities )
                                 

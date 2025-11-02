@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,9 @@ Route::delete('/users/{id}', [UserController::class, 'delete'])->name('users.del
 
 Route::get('/get/single/edit/{id}' , [UserController::class,'edit'])->name('get.single.edit');;
 Route::patch('/get/single/edit/{id}' , [UserController::class,'update'])->name('get.single.edit');;
+
+Route::get('/getStudents' , [StudentController::class,'getStudents'])->name('getStudents');
+
+Route::get('/unionStudent' , [StudentController::class,'UnionLearning'])->name('unionStudent');
+
+Route::get('/chunks' , [StudentController::class,'chunks'])->name('chunks');
